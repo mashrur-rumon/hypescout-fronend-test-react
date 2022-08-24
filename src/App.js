@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles.css";
+import Dashboard from "./components/Dashboard";
+import Campaign from "./components/Campaign";
+import Hypeasocial from "./components/Hypesocial";
+import Insights from "./components/Insights";
+import ThemeContext from "./contexts/ThemeContext";
+import { useContext } from "react";
 
-function App() {
+export default function App() {
+  const context = useContext(ThemeContext);
+  localStorage.setItem("theme", context.theme);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Dashboard/>}/>
+      <Route path="/campaign" element={<Campaign/>}/>
+      <Route path="/hypesocial" element={<Hypeasocial/>}/>
+      <Route path="/insights" element={<Insights/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

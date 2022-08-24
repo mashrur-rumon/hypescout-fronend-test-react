@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "profileImage": "https://svgshare.com/i/kyR.svg",
+      "name": "Maksudul Hasan",
+      "location": "Dhaka Bangladesh",
+      "joiningDate": "July 26th, 2022",
+      "followers": "12k",
+      "category": "Fashion",
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "profileImage": "https://svgshare.com/i/kzm.svg",
+      "name": "Refez Hossain",
+      "location": "Dhaka Bangladesh",
+      "joiningDate": "July 26th, 2022",
+      "followers": "12k",
+      "category": "Fashion",
+      "gender": "Male"
+    },
+    {
+      "id": 3,
+      "profileImage": "https://svgshare.com/i/kzf.svg",
+      "name": "John Doe",
+      "location": "Dhaka, Bangladesh",
+      "joiningDate": "July 26th, 2022",
+      "followers": "12k",
+      "category": "Fashion",
+      "gender": "Male"
+    },
+    {
+      "id": 4,
+      "profileImage": "https://svgshare.com/i/kzw.svg",
+      "name": "Neymar Jr.",
+      "location": "Dhaka, Bangladesh",
+      "joiningDate": "July 26th, 2022",
+      "followers": "12k",
+      "category": "Fashion",
+      "gender": "Male"
+    },
+    {
+      "id": 5,
+      "profileImage": "https://svgshare.com/i/kyS.svg",
+      "name": "Jonathan Smith",
+      "location": "Dhaka, Bangladesh",
+      "joiningDate": "July 26th, 2022",
+      "followers": "12k",
+      "category": "Fashion",
+      "gender": "Male"
+    },
+    {
+      "id": 6,
+      "profileImage": "https://svgshare.com/i/ky4.svg",
+      "name": "John Sina",
+      "location": "Dhaka, Bangladesh",
+      "joiningDate": "July 26th, 2022",
+      "followers": "12k",
+      "category": "Fashion",
+      "gender": "Male"
+    }
+  ]
+  
