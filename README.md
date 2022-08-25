@@ -1,8 +1,6 @@
 # Hypescout Frontend Test
 
-## Available Scripts
-
-In the project directory, you can run:
+In the project directory, run:
 
 ### `npm start`
 
