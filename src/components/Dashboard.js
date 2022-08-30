@@ -7,13 +7,83 @@ import instagram from "../image/instagram.svg";
 import linkedin from "../image/linkedin.svg";
 import twitter from "../image/twitter.svg";
 import location from "../image/location.svg";
-import previousIcon from "../image/previous icon.svg";
-import nextIcon from "../image/next icon.svg";
+// import previousIcon from "../image/previous icon.svg";
+// import nextIcon from "../image/next icon.svg";
 import filterIcon from "../image/filterIcon.svg";
+import ReactPaginate from 'react-paginate';
+
 
 function Dashboard() {
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState(data);
+  const [pageNumber, setPageNumber] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const usersPerPage= 6;
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const displayUsers = userData
+  
+  .filter((val) => {
+    if(searchTerm === ""){
+      return val;
+    }else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+      return val;
+    }
+  })
+  .slice(pagesVisited, pagesVisited + usersPerPage)
+  .map((d) => {
+    return (
+      <div className="col-lg-4 col-md-6 col-12 profile__column" key={d.id}>
+        <div className="full__card">
+          <div className="profile__card">
+            <img className="user__picture" src={d.profileImage} alt="profile_picture"/>
+            <p className="user__name">{d.name}</p>
+            <div className="location__section">
+              <img src={location} alt=''/>
+              <p className="location mb-0">{d.location}</p>
+            </div>   
+            <div className="user__join">
+              <img src="./IMAGE/clock.svg" alt=""/>
+              <span>{d.joiningDate}</span>
+            </div>
+            <div className="contact__icon">
+              <div>
+                <img className="social__icon" src={facebook} alt="facebook"/>
+              </div>
+              <div>
+                <img className="social__icon" src={instagram} alt="instagram"/>
+              </div>
+             <div>
+                <img className="social__icon" src={linkedin} alt="linkedin"/>
+              </div>
+              <div>
+                <img className="social__icon" src={twitter}alt="twitter"/>
+              </div>
+            </div>
+            <div className="profile__detail__main">
+              <div className="profile__detail">
+                <p className="mb-0">{d.followers}</p>
+                <p className="mb-0">Followers</p>
+              </div>
+              <div className="profile__detail">
+                <p className="mb-0">{d.category}</p>
+                <p className="mb-0">Category</p>
+              </div>
+              <div className="profile__detail">
+                <p className="mb-0">{d.gender}</p>
+                <p className="mb-0">Gender</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }); 
+
+  const pageCount = Math.ceil(userData.length / usersPerPage);
+  const changePage = ({selected}) => {
+    setPageNumber(selected)
+  };
   useEffect(() => {
     setUserData(data);
   }, []);
@@ -115,9 +185,21 @@ function Dashboard() {
 
 {/* profile section starts  */}
 <div className="container">
-  <div className="profile__row row gx-lg-4 gy-4">
+  <div className="profile__row row gx-lg-4 gy-4">  
+    {displayUsers}
+    <ReactPaginate
+    previousLabel={"< Previous"}
+    nextLabel={"Next >"}
+    pageCount={pageCount}
+    onPageChange={changePage}
+    containerClassName={"paginationBttns"}
+    previousLinkClassName={"previousBttn"}
+    nextLinkClassName={"nextBttn"}
+    disabledClassName={"paginastionDisabled"}
+    activeClassName={"paginationActive"}
+    />
 
-{// eslint-disable-next-line
+{/* {// eslint-disable-next-line
  userData.filter((val) => {
   if(searchTerm === ""){
     return val;
@@ -171,13 +253,13 @@ function Dashboard() {
         </div>
       </div>
   )
-})}
+})} */}
   </div>
 </div>
 {/* profile section ends */}
 
 {/* pagination__starts */}
-<section className="pagination__main">
+{/* <section className="pagination__main">
   <div className="container">
     <div className="row">
       <div className="previous__page col-lg-4 col-md-4 col-4 my-auto">
@@ -203,7 +285,7 @@ function Dashboard() {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 {/* pagination__ends */}
     </Layout>
   )
