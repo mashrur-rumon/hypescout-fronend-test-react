@@ -22,7 +22,7 @@ function Dashboard() {
   const pagesVisited = pageNumber * usersPerPage;
 
   const displayUsers = userData
-  
+// eslint-disable-next-line
   .filter((val) => {
     if(searchTerm === ""){
       return val;
