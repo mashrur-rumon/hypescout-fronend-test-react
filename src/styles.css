@@ -465,69 +465,6 @@ li {
   color: #637381;
 }
 
-/* pagination */
-/* .pagination__main{
-  margin-bottom: 80px;
-}
-
-.previous__icon{
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.next__icon{
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-}
-
-.previous__text{
-  font-weight: 400;
-  font-size: 14px;
-}
-.next__text{
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.page__number{
-  display: flex;
-  gap:20px;
-  justify-content: center;
-  font-weight:400;
-  font-size:14px;
-  color:#667085; 
-}
-
-.page__active{
-  background-color: #17181B;
-  border-radius: 50%;
-  align-items: center;
-  width: 40px;
-  height: 38px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-.page__inactive{
-  height: 35px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.previous__page{
-  color: #667085;
-} 
-.next__page{
-  color: #667085;
-  text-align: right;
-} */
-
 @media only screen and (max-width: 600px) {
 .hide__page{
   display: none;
@@ -675,6 +612,12 @@ li {
   width: 130px;
 }
 
+.light__mode .heading{
+  color: #231F20;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 @media only screen and (max-width: 375px) {
   .nav__logo__light{
     height: 30px;
@@ -805,5 +748,3 @@ li {
     background-color: #FFFFFF !important;
     color: #050405;
   }
-  
-
